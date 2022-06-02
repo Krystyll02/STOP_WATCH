@@ -9,11 +9,11 @@ watch.geometry ("1000x600")
 watch.title("STOPWATCH")
 watch.config(bg = "darkslategray")
 
-seconds = 00
-minutes = 00
-hours = 00
-h = 00
-j = 00
+seconds = 0
+minutes = 0
+hours = 0
+h = 0
+j = 0
 
 #FUNCTIONS
 def create_label(text,_x,_y):
@@ -25,11 +25,11 @@ def Start():
 	seconds=seconds+1	
 	if seconds == 60:
 		minutes = minutes+1
-		seconds=00
+		seconds=0
 	
 	elif minutes == 60:
 		hours = hours+1
-		minutes=00
+		minutes=0
 		
 	timer.config(text = f"{hours}:{minutes}:{seconds}")
 	time = timer.after(60,Start)
@@ -40,9 +40,9 @@ def Stop():
 
 def Reset():
 	global seconds, minutes,  hours
-	seconds=00
-	minutes=00
-	hours=00
+	seconds=0
+	minutes=0
+	hours=0
 	
 	timer.config(text = f'{hours}:{minutes}:{seconds}')
 	timer.after_cancel(time)
